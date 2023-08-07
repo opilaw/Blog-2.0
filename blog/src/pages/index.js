@@ -7,7 +7,7 @@ import {getPosts} from '../services'
 
 const inter = Inter({ subsets: ['latin'] })
 
-
+const test= 1;
 
 export default function Home({posts}) {
   return (
