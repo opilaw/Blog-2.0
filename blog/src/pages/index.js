@@ -5,9 +5,11 @@ import styles from '@/styles/Home.module.css'
 import {PostCard, Categories, PostWidget} from './components'
 import {getPosts} from '../services'
 
+
+
 const inter = Inter({ subsets: ['latin'] })
 
-const test= 3;
+
 
 export default function Home({posts}) {
   return (
@@ -21,7 +23,7 @@ export default function Home({posts}) {
       <main>
        <div className={styles.postContainer}>
       {posts.map((post)=>(
-       <PostCard post={post} key={post.title}></PostCard>
+       <PostCard post={post.node} key={post.title}></PostCard>
   
       ))}
        </div>
