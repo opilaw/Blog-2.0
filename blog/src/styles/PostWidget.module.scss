@@ -1,0 +1,34 @@
+@import './Colors.module.scss';
+
+.PostWidgetContainer{
+    display: flex;
+    gap: 1rem;
+       flex-direction: column;
+    
+       .RecentContainer{
+        display: flex;
+       }
+     
+      
+}
+
+
+.PostWidgetContainer{
+    background-color: $white;
+    box-shadow: $box-shadow;
+    padding: 1rem ;
+    border-radius: 1rem;
+    width: 90%;
+      
+}
+
+.TitleAndDate{
+    padding: 0 0 0 1rem;
+
+}
+.title{
+    padding-top: 0.5rem;
+    text-decoration: none;
+ color: $black;
+ cursor: pointer;
+}

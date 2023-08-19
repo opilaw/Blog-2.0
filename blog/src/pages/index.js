@@ -7,6 +7,8 @@ import {getPosts} from '../services'
 
 
 
+
+
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -27,7 +29,7 @@ export default function Home({posts}) {
   
       ))}
        </div>
-<div>
+<div className={styles.RightContent}>
   <PostWidget></PostWidget>
   <Categories></Categories>
 </div>
@@ -44,3 +46,4 @@ export async function getStaticProps(){
     props: {posts}
   }
 }
+
