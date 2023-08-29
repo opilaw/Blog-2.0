@@ -116,3 +116,44 @@ export const getCategories = async(categories)=>{
   const result= await graphQLClient.request(query, categories)
   return result.categories
 }
+
+
+export const getPostDetails= async(slug) =>{
+  const endpoint = 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cli0f0owc3mov01uh9av8epwq/master'
+      //endpoint
+      const graphQLClient = new GraphQLClient(
+      endpoint
+      )
+      const query = gql`
+      query GetPostDetails($slug : String!) {
+        post(where: {slug: $slug}) {
+          title
+          excerpt
+          featuredImage {
+            url
+          }
+          postsConnection {
+            edges {
+              node {
+          author{
+            name
+            bio
+            photo {
+              url
+            }
+          }
+          createdAt
+          slug
+          content {
+            raw
+          }
+          categories {
+            name
+            slug
+          }
+        }}}}
+      }`
+  
+        const result= await graphQLClient.request(query, {slug})
+        return result.post;
+  }
